@@ -99,7 +99,7 @@ const initializeDatabase = async () => {
 initializeDatabase();
 
 // Routes
-app.use('/api/students', require('./routes/students'));
+app.use('/api/students', require('./routes/api/students'));
 app.use('/api/faculty', require('./routes/faculty'));
 app.use('/api/results', require('./routes/results'));
 
