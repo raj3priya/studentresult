@@ -103,11 +103,6 @@ const initializeDatabase = async () => {
 // Initialize database on startup
 initializeDatabase();
 
-// Routes
-app.use('/api/students', require('./routes/api/students'));
-app.use('/api/faculty', require('./routes/api/faculty'));
-app.use('/api/results', require('./routes/api/results'));
-
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running' });
@@ -129,5 +124,10 @@ app.get('/students', async (req, res) => {
     res.status(500).send('Database error');
   }
 });
+
+// Routes
+app.use('/api/students', require('./routes/api/students'));
+app.use('/api/faculty', require('./routes/api/faculty'));
+app.use('/api/results', require('./routes/api/results'));
 
 app.listen(3000, () => console.log('Server running on port 3000'));
