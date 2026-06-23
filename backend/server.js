@@ -105,8 +105,8 @@ initializeDatabase();
 
 // Routes
 app.use('/api/students', require('./routes/api/students'));
-app.use('/api/faculty', require('./routes/faculty'));
-app.use('/api/results', require('./routes/results'));
+app.use('/api/faculty', require('./routes/api/faculty'));
+app.use('/api/results', require('./routes/api/results'));
 
 // Health check
 app.get('/api/health', (req, res) => {
